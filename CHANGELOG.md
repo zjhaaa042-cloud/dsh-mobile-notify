@@ -16,3 +16,4 @@
 - **测试**：离线自测 26 项断言（覆盖 10 个渠道的请求构建、业务码判定、失败与超时路径）、本地假推送服务器、真机单发脚本。
 - **文档**：README 补充从 GitHub 一行安装（`target=github:zjhaaa042-cloud/dsh-mobile-notify`）及全部可用的安装 spec 形式。
 - **包名**：`@local/dsh-mobile-notify` → `dsh-mobile-notify`（可发布到 npm 的公开包名），为插件市场一键安装做准备；本地 `link:` 安装方式不变，只需把 `cordis.patch.yml` 里的 `name` 与 `remove_bundle` 的目标同步改名。
+- **依赖声明**：`@deepseek-ai/schemastery` 由 `dependencies` 改为 `peerDependencies`（并保留 `devDependencies` 供本地开发），符合 DSH 插件规范，避免 profile 里出现重复运行时；仓库已加 `dsh-plugin` topic，并向 `awesome-dsh-plugin/awesome-dsh-plugin` 提交了插件市场收录条目。
