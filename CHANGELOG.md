@@ -14,3 +14,4 @@
 - **签名支持**：钉钉加签、飞书签名、ntfy access token、各渠道可自建服务器地址（`ntfyServer` / `barkServer` / `qmsgServer`）。
 - **26 项配置**全部带默认值，可直接在 `cordis.patch.yml` 的 `config` 里覆盖。
 - **测试**：离线自测 26 项断言（覆盖 10 个渠道的请求构建、业务码判定、失败与超时路径）、本地假推送服务器、真机单发脚本。
+- **文档**：README 补充从 GitHub 一行安装（`target=github:zjhaaa042-cloud/dsh-mobile-notify`）及全部可用的安装 spec 形式。

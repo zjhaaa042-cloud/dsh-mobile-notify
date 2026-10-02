@@ -49,7 +49,31 @@ Time: 2026/10/2 16:02:11
 
 ## Installation
 
-Requirements: DSH desktop running, Node ≥ 18, Git.
+Requirements: DSH desktop running, Node ≥ 18, and either network access to github.com or a local clone.
+
+### Option 1: install straight from GitHub (recommended)
+
+```
+plugin_manager  action=install_bundle  target=github:zjhaaa042-cloud/dsh-mobile-notify
+```
+
+`application: "applied"` means it is installed. The `target` is an install spec; the plugin manager accepts any of these:
+
+| Form | Example |
+| --- | --- |
+| git shorthand | `github:zjhaaa042-cloud/dsh-mobile-notify` |
+| git URL | `git+https://github.com/zjhaaa042-cloud/dsh-mobile-notify.git` |
+| repository URL | `https://github.com/zjhaaa042-cloud/dsh-mobile-notify` |
+| pinned tag/branch | `github:zjhaaa042-cloud/dsh-mobile-notify#v1.0.0` |
+| absolute local path | `/path/to/dsh-mobile-notify` (Option 2) |
+| tarball | `https://…/dsh-mobile-notify-1.0.0.tgz` |
+| npm package | `dsh-mobile-notify` (not published yet) |
+
+> Installing from git needs **no** manual `npm install`: pnpm installs `@deepseek-ai/schemastery` alongside it. The manual step is only required for local-path (`link:`) installs — see Option 2.
+
+Then configure `channel`, `ntfyTopic`, … under **Settings → Plugins** (26 fields, see [docs/configuration.md](docs/configuration.md)).
+
+### Option 2: clone locally (for hacking on the code or offline tarballs)
 
 ```bash
 git clone https://github.com/zjhaaa042-cloud/dsh-mobile-notify.git /path/to/dsh-mobile-notify

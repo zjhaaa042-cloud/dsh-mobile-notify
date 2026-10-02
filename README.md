@@ -60,9 +60,33 @@
 ### 前置条件
 
 - DSH 桌面端在运行（Node ≥ 18，自带 `fetch`）。
-- Git（或直接下载 ZIP）。
+- 两种方式二选一：直接让 DSH 从 GitHub 取包（需要能访问 github.com），或先 clone 到本地（适合要改代码 / 用离线压缩包）。
 
-### 步骤
+### 方式一：一行从 GitHub 安装（推荐）
+
+让 DSH 里的智能体执行（或自己在插件管理页填）：
+
+```
+plugin_manager  action=install_bundle  target=github:zjhaaa042-cloud/dsh-mobile-notify
+```
+
+返回 `application: "applied"` 即装好。`target` 是一条安装 spec，插件管理器接受这几种形式：
+
+| 形式 | 示例 | 说明 |
+| --- | --- | --- |
+| git 简写 | `github:zjhaaa042-cloud/dsh-mobile-notify` | 最省事 |
+| git 地址 | `git+https://github.com/zjhaaa042-cloud/dsh-mobile-notify.git` | 等价写法 |
+| 仓库页地址 | `https://github.com/zjhaaa042-cloud/dsh-mobile-notify` | 直接粘浏览器地址 |
+| 锁版本/分支 | `github:zjhaaa042-cloud/dsh-mobile-notify#v1.0.0` | `#` 后跟 tag、分支或 commit |
+| 本地绝对路径 | `D:\dsh\dsh-mobile-notify` | 见方式二 |
+| 压缩包 | `https://…/dsh-mobile-notify-1.0.0.tgz` | 内网分发可用 |
+| npm 包名 | `dsh-mobile-notify` | 尚未发布到 npm |
+
+> **从 git 装不需要手动 `npm install`**：pnpm 会把依赖 `@deepseek-ai/schemastery` 一起装进 profile 的虚拟store，裸导入能正常解析。只有用「本地路径」（`link:`）安装时才必须先在插件目录跑 `npm install`（原因见方式二）。
+
+装好后到 **设置 → 插件** 配置 `channel`、`ntfyTopic` 等字段（26 个，见 [docs/configuration.md](docs/configuration.md)）。
+
+### 方式二：clone 到本地再装（要改代码或用离线包）
 
 ```bash
 git clone https://github.com/zjhaaa042-cloud/dsh-mobile-notify.git D:\dsh\dsh-mobile-notify
