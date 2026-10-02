@@ -35,6 +35,7 @@
     "node": ">=18"
   },
   "scripts": {
+    "prepublishOnly": "node test/check-publishable.mjs",
     "test": "node test/notify-selftest.mjs",
     "send": "node test/send-test-push.mjs",
     "mock": "node test/mock-notify-server.mjs"
