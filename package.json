@@ -1,0 +1,66 @@
+{
+  "name": "@local/dsh-mobile-notify",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DSH 插件：任务完成后把通知推送到手机 —— ntfy / Bark / 钉钉 / 企业微信 / 飞书 / Server酱 / PushPlus / Telegram / Qmsg酱 / 通用 webhook",
+  "type": "module",
+  "icon": "./icon.svg",
+  "license": "MIT",
+  "author": "zjhaaa042-cloud",
+  "homepage": "https://github.com/zjhaaa042-cloud/dsh-mobile-notify#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjhaaa042-cloud/dsh-mobile-notify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zjhaaa042-cloud/dsh-mobile-notify/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "notification",
+    "ntfy",
+    "bark",
+    "dingtalk",
+    "wecom",
+    "feishu",
+    "serverchan",
+    "pushplus",
+    "telegram",
+    "qmsg",
+    "webhook"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node test/notify-selftest.mjs",
+    "send": "node test/send-test-push.mjs",
+    "mock": "node test/mock-notify-server.mjs"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./notify.js": "./notify.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "notify.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "docs"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.4"
+  }
+}

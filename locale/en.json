@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Mobile Notify",
+    "description": "Push a notification to your phone when a task finishes (ntfy / Bark / DingTalk / WeCom / Feishu / ServerChan / PushPlus / Telegram / Qmsg / generic webhook)."
+  }
+}

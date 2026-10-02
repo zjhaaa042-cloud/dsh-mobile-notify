@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "手机通知",
+    "description": "任务完成后把通知推送到手机（ntfy / Bark / 钉钉 / 企业微信 / 飞书 / Server酱 / PushPlus / Telegram / Qmsg酱 / 通用 webhook）。"
+  }
+}

@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Offline self-test
+        run: npm test
+      - name: Plugin module smoke test
+        run: |
+          node -e 'import("./index.js").then((m) => {
+            for (const key of ["apply", "Config", "name"]) {
+              if (m[key] === undefined) throw new Error("missing export: " + key);
+            }
+            const defaults = m.Config({});
+            if (Object.keys(defaults).length === 0) throw new Error("Config yielded no defaults");
+            console.log("plugin exports ok, config fields:", Object.keys(defaults).length);
+          })'

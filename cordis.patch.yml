@@ -1,0 +1,24 @@
+# DSH 手机通知插件（mobile-notify）的 bundle 声明与默认配置。
+#
+# 安装后所有字段都可以在 config 里覆盖，只写你要改的项即可；
+# 完整字段说明见 docs/configuration.md，各渠道怎么拿凭据见 docs/channels.md。
+#
+# ⚠️ 下面 ntfyTopic 是占位符，改成你自己随机生成的主题名，并在手机 ntfy App 里订阅同一个主题。
+#    不要把真实密钥/主题提交到公开仓库（可参考 docs/configuration.md 里的 skip-worktree 建议）。
+- insert:
+    - id: mobile-notify
+      name: '@local/dsh-mobile-notify'
+      config:
+        enabled: true
+        channel: ntfy
+        ntfyServer: 'https://ntfy.sh'
+        ntfyTopic: 'CHANGE-ME-random-topic'
+        trigger: idle
+        notifyOn: all
+        includeSubagents: false
+        includePreview: true
+        previewMaxChars: 200
+        minTurnDurationMs: 0
+        timeoutMs: 10000
+        dryRun: false
+        logPayload: false
