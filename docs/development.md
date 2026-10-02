@@ -83,7 +83,7 @@ npm run send -- https://ntfy.sh your-topic
 plugin_manager install_bundle target=D:\Desktop\over\dsh-mobile-notify
 
 # 之后每次改完代码/配置
-plugin_manager remove_bundle  target=@local/dsh-mobile-notify
+plugin_manager remove_bundle  target=dsh-mobile-notify
 plugin_manager install_bundle target=D:\Desktop\over\dsh-mobile-notify
 ```
 
@@ -94,7 +94,7 @@ plugin_manager install_bundle target=D:\Desktop\over\dsh-mobile-notify
 装完确认状态：
 
 ```
-cordis_inspect_query host Config listConfigs { "name": "@local/dsh-mobile-notify" }
+cordis_inspect_query host Config listConfigs { "name": "dsh-mobile-notify" }
 # status: "schema"  → 已激活且 Config schema 已挂载（"inactive" 表示没起来）
 ```
 

@@ -5,7 +5,7 @@
 ```yaml
 - insert:
     - id: mobile-notify
-      name: '@local/dsh-mobile-notify'
+      name: 'dsh-mobile-notify'
       config:
         channel: ntfy
         ntfyTopic: 'dsh-7f3a91c2'

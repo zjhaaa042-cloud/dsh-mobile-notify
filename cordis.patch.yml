@@ -3,11 +3,12 @@
 # 安装后所有字段都可以在 config 里覆盖，只写你要改的项即可；
 # 完整字段说明见 docs/configuration.md，各渠道怎么拿凭据见 docs/channels.md。
 #
-# ⚠️ 下面 ntfyTopic 是占位符，改成你自己随机生成的主题名，并在手机 ntfy App 里订阅同一个主题。
-#    不要把真实密钥/主题提交到公开仓库（可参考 docs/configuration.md 里的 skip-worktree 建议）。
+# ⚠️ 这份工作副本里 ntfyTopic 是本机真实主题；GitHub 仓库里对应位置是占位符
+#    'CHANGE-ME-random-topic'。改主题/密钥前后别把工作副本提交上去，
+#    可以 `git update-index --skip-worktree cordis.patch.yml`（见 docs/configuration.md）。
 - insert:
     - id: mobile-notify
-      name: '@local/dsh-mobile-notify'
+      name: 'dsh-mobile-notify'
       config:
         enabled: true
         channel: ntfy

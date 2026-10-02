@@ -1,7 +1,6 @@
 {
-  "name": "@local/dsh-mobile-notify",
+  "name": "dsh-mobile-notify",
   "version": "1.0.0",
-  "private": true,
   "description": "DSH 插件：任务完成后把通知推送到手机 —— ntfy / Bark / 钉钉 / 企业微信 / 飞书 / Server酱 / PushPlus / Telegram / Qmsg酱 / 通用 webhook",
   "type": "module",
   "icon": "./icon.svg",
@@ -55,6 +54,10 @@
     "locale/*.json",
     "docs"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"

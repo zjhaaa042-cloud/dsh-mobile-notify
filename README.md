@@ -45,7 +45,7 @@
 ```yaml
 - insert:
     - id: mobile-notify
-      name: '@local/dsh-mobile-notify'
+      name: 'dsh-mobile-notify'
       config:
         channel: ntfy
         ntfyTopic: 'dsh-7f3a91c2'   # ← 改成你订阅的主题名
@@ -112,7 +112,7 @@ plugin_manager  action=install_bundle  target=D:\dsh\dsh-mobile-notify
 改完代码或配置后，**必须两步**，直接重装会失败：
 
 ```
-plugin_manager  action=remove_bundle    target=@local/dsh-mobile-notify
+plugin_manager  action=remove_bundle    target=dsh-mobile-notify
 plugin_manager  action=install_bundle   target=D:\dsh\dsh-mobile-notify
 ```
 
@@ -123,7 +123,7 @@ plugin_manager  action=install_bundle   target=D:\dsh\dsh-mobile-notify
 ### 卸载
 
 ```
-plugin_manager  action=remove_bundle  target=@local/dsh-mobile-notify
+plugin_manager  action=remove_bundle  target=dsh-mobile-notify
 ```
 
 ## 支持渠道

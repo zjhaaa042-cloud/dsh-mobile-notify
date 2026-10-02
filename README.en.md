@@ -38,7 +38,7 @@ Time: 2026/10/2 16:02:11
    ```yaml
    - insert:
        - id: mobile-notify
-         name: '@local/dsh-mobile-notify'
+         name: 'dsh-mobile-notify'
          config:
            channel: ntfy
            ntfyTopic: 'dsh-7f3a91c2'   # ← your subscribed topic
@@ -96,7 +96,7 @@ Success looks like `application: "applied"` with `warnings: []`; an entry named 
 Always two steps; a plain re-install fails with `ambiguous-install` (the dependency name is already present, so pnpm changes nothing and the manager cannot tell what was installed):
 
 ```
-plugin_manager  action=remove_bundle    target=@local/dsh-mobile-notify
+plugin_manager  action=remove_bundle    target=dsh-mobile-notify
 plugin_manager  action=install_bundle   target=<absolute path to the plugin directory>
 ```
 
@@ -105,7 +105,7 @@ plugin_manager  action=install_bundle   target=<absolute path to the plugin dire
 ### Uninstalling
 
 ```
-plugin_manager  action=remove_bundle  target=@local/dsh-mobile-notify
+plugin_manager  action=remove_bundle  target=dsh-mobile-notify
 ```
 
 ## Channels

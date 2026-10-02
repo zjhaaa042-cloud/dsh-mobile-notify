@@ -9,7 +9,7 @@
 **解决**：先移除再安装。
 
 ```
-plugin_manager remove_bundle  target=@local/dsh-mobile-notify
+plugin_manager remove_bundle  target=dsh-mobile-notify
 plugin_manager install_bundle target=D:\Desktop\over\dsh-mobile-notify
 ```
 
@@ -17,7 +17,7 @@ plugin_manager install_bundle target=D:\Desktop\over\dsh-mobile-notify
 
 ## failed to import / Cannot find package 开头
 
-**现象**：安装返回 `application: "failed"`，诊断里有 `1 entry did not activate` 和 `mobile-notify (@local/dsh-mobile-notify): failed to import`，日志里能看到：
+**现象**：安装返回 `application: "failed"`，诊断里有 `1 entry did not activate` 和 `mobile-notify (dsh-mobile-notify): failed to import`，日志里能看到：
 
 ```
 ERR_MODULE_NOT_FOUND: Cannot find package '@deepseek-ai/schemastery' imported from .../index.js
@@ -37,7 +37,7 @@ npm install
 检查一下插件管理器看到的行状态：
 
 ```
-cordis_inspect_query host Config listConfigs { "name": "@local/dsh-mobile-notify" }
+cordis_inspect_query host Config listConfigs { "name": "dsh-mobile-notify" }
 ```
 
 - `status: "schema"` → 已激活，Config schema 挂上了，正常。
@@ -120,7 +120,7 @@ ntfy 渠道走的是 JSON 请求体（而不是把标题塞进 HTTP header），
 ## 怎么卸载
 
 ```
-plugin_manager remove_bundle target=@local/dsh-mobile-notify
+plugin_manager remove_bundle target=dsh-mobile-notify
 ```
 
 这会摘掉 bundle 行与 profile 依赖，插件源码目录会保留在原地，随时可以再装回来。
@@ -129,7 +129,7 @@ plugin_manager remove_bundle target=@local/dsh-mobile-notify
 
 收集这些信息再排查会快很多：
 
-1. `plugin_manager list_bundles` 里 `@local/dsh-mobile-notify` 的 `installed` / `enabled`。
-2. `cordis_inspect_query host Config listConfigs { "name": "@local/dsh-mobile-notify" }` 的 `status` 与诊断。
+1. `plugin_manager list_bundles` 里 `dsh-mobile-notify` 的 `installed` / `enabled`。
+2. `cordis_inspect_query host Config listConfigs { "name": "dsh-mobile-notify" }` 的 `status` 与诊断。
 3. DSH 日志里 `[mobile-notify]` 开头的行（`dryRun: true` + `logPayload: true` 时的请求体尤其有用）。
 4. `node test/notify-selftest.mjs` 的输出。
